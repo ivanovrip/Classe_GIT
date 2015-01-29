@@ -1,0 +1,37 @@
+create table Profesor (
+  Id integer not null,
+  nombre varchar(255),
+  ape1 varchar(255),
+  ape2 varchar(255),
+  primary key (Id)
+);
+
+create table correoelectronico (
+	idcorreo integer not null,
+	direccioncorreo varchar(255),
+	idProfesorinteger references Profesor(Id),
+	primary key (idcorreo)
+);
+
+create table modulo (
+	idmodulo integer not null,
+	nombre varchar(255),
+	idProfesorinteger references Profesor(Id),
+	primary key (idmodulo)
+);
+
+create table Student (
+  studentId integer not null,
+  name varchar(255),
+  surname varchar(255),
+  age integer not null,
+  email varchar(255),
+  primary key (studentId)
+);
+
+create table Course (
+  courseId integer not null,
+  name varchar(255),
+  idStudent integer references Student(studentId),
+  primary key (courseId)
+);
