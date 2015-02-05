@@ -1,4 +1,4 @@
-create table Profesor (
+create table DLLORDES(
   Id integer not null,
   nombre varchar(255),
   ape1 varchar(255),
